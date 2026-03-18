@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rogers Boys Reward Tracker</title>
+  <title>Rogers Epic Reward Tracker</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CDN class detection for dynamic colors -->
+  <div class="hidden bg-pink-600 bg-pink-950/50 border-pink-800 border-pink-400 border-pink-500 text-pink-300 text-pink-400 shadow-pink-600/30 shadow-pink-600/40 bg-orange-600 bg-orange-950/50 border-orange-800 border-orange-400 border-orange-500 text-orange-300 text-orange-400 shadow-orange-600/30 shadow-orange-600/40"></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap');
@@ -43,7 +45,7 @@
   <div class="max-w-6xl mx-auto">
     <header class="text-center mb-8">
       <h1 class="epic-title text-3xl md:text-5xl mb-2" style="color: #FFE81F; -webkit-text-stroke: 1px #b8860b; text-shadow: 0 0 10px rgba(255,232,31,0.3);">
-        Rogers Boys Reward Tracker
+        Rogers Epic Reward Tracker
       </h1>
       <p class="text-gray-500 italic text-lg mb-1">Complete your training and rewards will follow...</p>
       <p class="text-gray-400 text-lg">4 weeks of consistency = Glorious Rewards!</p>
@@ -120,6 +122,68 @@
         <div id="boon-weeks" class="space-y-4"></div>
       </div>
     </section>
+
+    <!-- Amber's Tracker -->
+    <section class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="Amber.png" alt="Amber" class="w-24 h-24 rounded-full object-cover border-2 border-pink-500">
+        <div>
+          <h2 class="text-2xl font-bold text-pink-400">Amber</h2>
+          <p class="text-gray-400 text-sm">Movement · 5 days/week · 4 weeks</p>
+        </div>
+        <div id="amber-prize" class="ml-auto hidden">
+          <div class="prize-glow bg-amber-500 text-black font-bold px-4 py-2 rounded-full text-lg">
+            🏆 PRIZE EARNED!
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 rounded-2xl p-4 md:p-6 border border-gray-800">
+        <div class="flex gap-2 mb-6 justify-center">
+          <span class="text-gray-500 text-sm mr-2 self-center">Progress:</span>
+          <div id="amber-week-1-badge" class="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center text-sm font-bold">1</div>
+          <div class="self-center text-gray-700">→</div>
+          <div id="amber-week-2-badge" class="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center text-sm font-bold">2</div>
+          <div class="self-center text-gray-700">→</div>
+          <div id="amber-week-3-badge" class="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center text-sm font-bold">3</div>
+          <div class="self-center text-gray-700">→</div>
+          <div id="amber-week-4-badge" class="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center text-sm font-bold">4</div>
+        </div>
+
+        <div id="amber-weeks" class="space-y-4"></div>
+      </div>
+    </section>
+
+    <!-- Dave's Tracker -->
+    <section class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="Dave.png" alt="Dave" class="w-24 h-24 rounded-full object-cover border-2 border-orange-500">
+        <div>
+          <h2 class="text-2xl font-bold text-orange-400">Dave</h2>
+          <p class="text-gray-400 text-sm">Movement · 5 days/week · 4 weeks</p>
+        </div>
+        <div id="dave-prize" class="ml-auto hidden">
+          <div class="prize-glow bg-amber-500 text-black font-bold px-4 py-2 rounded-full text-lg">
+            🏆 PRIZE EARNED!
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 rounded-2xl p-4 md:p-6 border border-gray-800">
+        <div class="flex gap-2 mb-6 justify-center">
+          <span class="text-gray-500 text-sm mr-2 self-center">Progress:</span>
+          <div id="dave-week-1-badge" class="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center text-sm font-bold">1</div>
+          <div class="self-center text-gray-700">→</div>
+          <div id="dave-week-2-badge" class="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center text-sm font-bold">2</div>
+          <div class="self-center text-gray-700">→</div>
+          <div id="dave-week-3-badge" class="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center text-sm font-bold">3</div>
+          <div class="self-center text-gray-700">→</div>
+          <div id="dave-week-4-badge" class="w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center text-sm font-bold">4</div>
+        </div>
+
+        <div id="dave-weeks" class="space-y-4"></div>
+      </div>
+    </section>
   </div>
 
   <script>
@@ -141,6 +205,16 @@
         boon: {
           weeks: Array.from({ length: 4 }, () =>
             Array.from({ length: 7 }, () => ({ soccer: false, touches: '', reading: false, minutes: '' }))
+          )
+        },
+        amber: {
+          weeks: Array.from({ length: 4 }, () =>
+            Array.from({ length: 7 }, () => ({ completed: false }))
+          )
+        },
+        dave: {
+          weeks: Array.from({ length: 4 }, () =>
+            Array.from({ length: 7 }, () => ({ completed: false }))
           )
         }
       };
@@ -192,13 +266,24 @@
     async function initData() {
       const remote = await loadDataFromSupabase();
       if (remote) {
+        // Merge in new fields if missing from old data
+        if (!remote.amber) remote.amber = getDefaultData().amber;
+        if (!remote.dave) remote.dave = getDefaultData().dave;
         data = remote;
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
       }
-      renderFinn();
-      renderBoone();
+      if (!data.amber) data.amber = getDefaultData().amber;
+      if (!data.dave) data.dave = getDefaultData().dave;
+      renderAll();
     }
     initData();
+
+    function renderAll() {
+      renderFinn();
+      renderBoone();
+      renderAmber();
+      renderDave();
+    }
 
     function renderFinn() {
       const container = document.getElementById('finn-weeks');
@@ -405,12 +490,82 @@
       }
     }
 
+    function renderMovementTracker(person, color) {
+      const container = document.getElementById(`${person}-weeks`);
+      container.innerHTML = '';
+
+      data[person].weeks.forEach((week, wi) => {
+        const daysCompleted = week.filter(d => d.completed).length;
+        const weekMet = daysCompleted >= 5;
+
+        const weekEl = document.createElement('div');
+        weekEl.className = `rounded-xl p-4 ${weekMet ? `bg-${color}-950/50 border border-${color}-800` : 'bg-gray-850 border border-gray-800'}`;
+        weekEl.innerHTML = `
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-lg ${weekMet ? `text-${color}-300` : 'text-gray-300'}">Week ${wi + 1}</h3>
+            <span class="text-sm font-bold ${weekMet ? 'text-green-400' : 'text-gray-500'}">${daysCompleted}/5 days ${weekMet ? '✓' : ''}</span>
+          </div>
+          <div class="grid grid-cols-7 gap-2">
+            ${week.map((day, di) => `
+              <div class="day-cell text-center">
+                <div class="text-xs text-gray-500 mb-1">${DAYS[di]}</div>
+                <button
+                  onclick="toggleMovement('${person}', ${wi}, ${di})"
+                  class="w-full aspect-square rounded-lg flex items-center justify-center text-lg font-bold transition
+                    ${day.completed
+                      ? `bg-${color}-600 text-white shadow-lg shadow-${color}-600/30`
+                      : 'bg-gray-800 text-gray-600 hover:bg-gray-700'}"
+                >
+                  ${day.completed ? '✓' : ''}
+                </button>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        container.appendChild(weekEl);
+      });
+
+      updateMovementBadges(person, color);
+    }
+
+    function renderAmber() { renderMovementTracker('amber', 'pink'); }
+    function renderDave() { renderMovementTracker('dave', 'orange'); }
+
+    function toggleMovement(person, week, day) {
+      data[person].weeks[week][day].completed = !data[person].weeks[week][day].completed;
+      saveData();
+      if (person === 'amber') renderAmber();
+      else renderDave();
+    }
+
+    function updateMovementBadges(person, color) {
+      let consecutiveWeeks = 0;
+      for (let wi = 0; wi < 4; wi++) {
+        const daysCompleted = data[person].weeks[wi].filter(d => d.completed).length;
+        const badge = document.getElementById(`${person}-week-${wi + 1}-badge`);
+        if (daysCompleted >= 5) {
+          badge.className = `w-10 h-10 rounded-full bg-${color}-600 border-2 border-${color}-400 flex items-center justify-center text-sm font-bold text-white shadow-lg shadow-${color}-600/40`;
+          consecutiveWeeks++;
+        } else if (daysCompleted > 0) {
+          badge.className = `w-10 h-10 rounded-full bg-gray-800 border-2 border-${color}-800 flex items-center justify-center text-sm font-bold text-${color}-400`;
+        } else {
+          badge.className = 'w-10 h-10 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center text-sm font-bold text-gray-500';
+        }
+      }
+
+      const prize = document.getElementById(`${person}-prize`);
+      if (consecutiveWeeks >= 4) {
+        prize.classList.remove('hidden');
+      } else {
+        prize.classList.add('hidden');
+      }
+    }
+
     function resetAll() {
       if (confirm('Reset all tracking data? This cannot be undone.')) {
         data = getDefaultData();
         saveData();
-        renderFinn();
-        renderBoone();
+        renderAll();
       }
     }
 
@@ -419,8 +574,7 @@
     }
 
     // Initial render
-    renderFinn();
-    renderBoone();
+    renderAll();
   </script>
 </body>
 </html>
