@@ -64,13 +64,16 @@
       <div class="flex items-center gap-3 mb-4">
         <img src="Finn.png" alt="Finn" class="w-24 h-24 rounded-full object-cover border-2 border-blue-500">
         <div>
-          <h2 class="text-2xl font-bold text-blue-400">Finn</h2>
+          <h2 class="text-2xl font-bold text-blue-400">Finn <span id="finn-banked" class="ml-2 text-sm font-normal text-gray-600">🏦 0 weeks banked</span></h2>
           <p class="text-gray-400 text-sm">2 miles cross country · 5 days/week · 4 weeks</p>
         </div>
-        <div id="finn-prize" class="ml-auto hidden">
+        <div id="finn-prize" class="ml-auto hidden flex flex-col items-end gap-2">
           <div class="prize-glow bg-amber-500 text-black font-bold px-4 py-2 rounded-full text-lg">
             🏆 PRIZE EARNED!
           </div>
+          <button onclick="bankReward('finn')" class="bg-amber-600 hover:bg-amber-500 text-white font-bold px-4 py-2 rounded-full text-sm transition">
+            🏦 Bank Reward
+          </button>
         </div>
       </div>
 
@@ -88,6 +91,12 @@
         </div>
 
         <div id="finn-weeks" class="space-y-4"></div>
+
+        <div class="flex justify-end gap-3 mt-4 text-xs">
+          <button onclick="resetPersonWeeks('finn', 'Finn')" class="text-gray-500 hover:text-red-400 transition">Reset Weeks</button>
+          <span class="text-gray-700">·</span>
+          <button onclick="resetPersonBanked('finn', 'Finn')" class="text-gray-500 hover:text-red-400 transition">Reset Banked</button>
+        </div>
       </div>
     </section>
 
@@ -96,13 +105,16 @@
       <div class="flex items-center gap-3 mb-4">
         <img src="Boone.png" alt="Boone" class="w-24 h-24 rounded-full object-cover border-2 border-green-500">
         <div>
-          <h2 class="text-2xl font-bold text-green-400">Boone</h2>
+          <h2 class="text-2xl font-bold text-green-400">Boone <span id="boon-banked" class="ml-2 text-sm font-normal text-gray-600">🏦 0 weeks banked</span></h2>
           <p class="text-gray-400 text-sm">500 soccer touches + 30 min reading · 5 days/week · 4 weeks</p>
         </div>
-        <div id="boon-prize" class="ml-auto hidden">
+        <div id="boon-prize" class="ml-auto hidden flex flex-col items-end gap-2">
           <div class="prize-glow bg-amber-500 text-black font-bold px-4 py-2 rounded-full text-lg">
             🏆 PRIZE EARNED!
           </div>
+          <button onclick="bankReward('boon')" class="bg-amber-600 hover:bg-amber-500 text-white font-bold px-4 py-2 rounded-full text-sm transition">
+            🏦 Bank Reward
+          </button>
         </div>
       </div>
 
@@ -120,6 +132,12 @@
         </div>
 
         <div id="boon-weeks" class="space-y-4"></div>
+
+        <div class="flex justify-end gap-3 mt-4 text-xs">
+          <button onclick="resetPersonWeeks('boon', 'Boone')" class="text-gray-500 hover:text-red-400 transition">Reset Weeks</button>
+          <span class="text-gray-700">·</span>
+          <button onclick="resetPersonBanked('boon', 'Boone')" class="text-gray-500 hover:text-red-400 transition">Reset Banked</button>
+        </div>
       </div>
     </section>
 
@@ -128,13 +146,16 @@
       <div class="flex items-center gap-3 mb-4">
         <img src="Amber.png" alt="Amber" class="w-24 h-24 rounded-full object-cover border-2 border-pink-500">
         <div>
-          <h2 class="text-2xl font-bold text-pink-400">Amber</h2>
+          <h2 class="text-2xl font-bold text-pink-400">Amber <span id="amber-banked" class="ml-2 text-sm font-normal text-gray-600">🏦 0 weeks banked</span></h2>
           <p class="text-gray-400 text-sm">Movement · 5 days/week · 4 weeks</p>
         </div>
-        <div id="amber-prize" class="ml-auto hidden">
+        <div id="amber-prize" class="ml-auto hidden flex flex-col items-end gap-2">
           <div class="prize-glow bg-amber-500 text-black font-bold px-4 py-2 rounded-full text-lg">
             🏆 PRIZE EARNED!
           </div>
+          <button onclick="bankReward('amber')" class="bg-amber-600 hover:bg-amber-500 text-white font-bold px-4 py-2 rounded-full text-sm transition">
+            🏦 Bank Reward
+          </button>
         </div>
       </div>
 
@@ -151,6 +172,12 @@
         </div>
 
         <div id="amber-weeks" class="space-y-4"></div>
+
+        <div class="flex justify-end gap-3 mt-4 text-xs">
+          <button onclick="resetPersonWeeks('amber', 'Amber')" class="text-gray-500 hover:text-red-400 transition">Reset Weeks</button>
+          <span class="text-gray-700">·</span>
+          <button onclick="resetPersonBanked('amber', 'Amber')" class="text-gray-500 hover:text-red-400 transition">Reset Banked</button>
+        </div>
       </div>
     </section>
 
@@ -159,13 +186,16 @@
       <div class="flex items-center gap-3 mb-4">
         <img src="Dave.png" alt="Dave" class="w-24 h-24 rounded-full object-cover border-2 border-orange-500">
         <div>
-          <h2 class="text-2xl font-bold text-orange-400">Dave</h2>
+          <h2 class="text-2xl font-bold text-orange-400">Dave <span id="dave-banked" class="ml-2 text-sm font-normal text-gray-600">🏦 0 weeks banked</span></h2>
           <p class="text-gray-400 text-sm">Movement · 5 days/week · 4 weeks</p>
         </div>
-        <div id="dave-prize" class="ml-auto hidden">
+        <div id="dave-prize" class="ml-auto hidden flex flex-col items-end gap-2">
           <div class="prize-glow bg-amber-500 text-black font-bold px-4 py-2 rounded-full text-lg">
             🏆 PRIZE EARNED!
           </div>
+          <button onclick="bankReward('dave')" class="bg-amber-600 hover:bg-amber-500 text-white font-bold px-4 py-2 rounded-full text-sm transition">
+            🏦 Bank Reward
+          </button>
         </div>
       </div>
 
@@ -182,6 +212,12 @@
         </div>
 
         <div id="dave-weeks" class="space-y-4"></div>
+
+        <div class="flex justify-end gap-3 mt-4 text-xs">
+          <button onclick="resetPersonWeeks('dave', 'Dave')" class="text-gray-500 hover:text-red-400 transition">Reset Weeks</button>
+          <span class="text-gray-700">·</span>
+          <button onclick="resetPersonBanked('dave', 'Dave')" class="text-gray-500 hover:text-red-400 transition">Reset Banked</button>
+        </div>
       </div>
     </section>
   </div>
@@ -198,26 +234,34 @@
     function getDefaultData() {
       return {
         finn: {
+          banked: 0,
           weeks: Array.from({ length: 4 }, () =>
             Array.from({ length: 7 }, () => ({ completed: false, miles: '' }))
           )
         },
         boon: {
+          banked: 0,
           weeks: Array.from({ length: 4 }, () =>
             Array.from({ length: 7 }, () => ({ soccer: false, touches: '', reading: false, minutes: '' }))
           )
         },
         amber: {
+          banked: 0,
           weeks: Array.from({ length: 4 }, () =>
             Array.from({ length: 7 }, () => ({ completed: false }))
           )
         },
         dave: {
+          banked: 0,
           weeks: Array.from({ length: 4 }, () =>
             Array.from({ length: 7 }, () => ({ completed: false }))
           )
         }
       };
+    }
+
+    function emptyWeeks(person) {
+      return getDefaultData()[person].weeks;
     }
 
     let data = loadDataLocal();
@@ -263,17 +307,23 @@
       }
     }
 
+    function backfillData(d) {
+      const defaults = getDefaultData();
+      ['finn', 'boon', 'amber', 'dave'].forEach(p => {
+        if (!d[p]) d[p] = defaults[p];
+        if (typeof d[p].banked !== 'number') d[p].banked = 0;
+      });
+      return d;
+    }
+
     async function initData() {
       const remote = await loadDataFromSupabase();
       if (remote) {
-        // Merge in new fields if missing from old data
-        if (!remote.amber) remote.amber = getDefaultData().amber;
-        if (!remote.dave) remote.dave = getDefaultData().dave;
-        data = remote;
+        data = backfillData(remote);
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } else {
+        data = backfillData(data);
       }
-      if (!data.amber) data.amber = getDefaultData().amber;
-      if (!data.dave) data.dave = getDefaultData().dave;
       renderAll();
     }
     initData();
@@ -462,6 +512,7 @@
       } else {
         prize.classList.add('hidden');
       }
+      updateBankedDisplay('finn');
     }
 
     function updateBooneBadges() {
@@ -488,6 +539,7 @@
       } else {
         prize.classList.add('hidden');
       }
+      updateBankedDisplay('boon');
     }
 
     function renderMovementTracker(person, color) {
@@ -559,10 +611,48 @@
       } else {
         prize.classList.add('hidden');
       }
+      updateBankedDisplay(person);
+    }
+
+    function updateBankedDisplay(person) {
+      const el = document.getElementById(`${person}-banked`);
+      if (!el) return;
+      const n = data[person].banked || 0;
+      el.textContent = `🏦 ${n} weeks banked`;
+      if (n > 0) {
+        el.classList.remove('text-gray-600');
+        el.classList.add('text-amber-400');
+      } else {
+        el.classList.add('text-gray-600');
+        el.classList.remove('text-amber-400');
+      }
+    }
+
+    function bankReward(person) {
+      data[person].banked = (data[person].banked || 0) + 4;
+      data[person].weeks = emptyWeeks(person);
+      saveData();
+      renderAll();
+    }
+
+    function resetPersonWeeks(person, label) {
+      if (confirm(`Reset ${label}'s 4-week chart? Banked weeks will be kept.`)) {
+        data[person].weeks = emptyWeeks(person);
+        saveData();
+        renderAll();
+      }
+    }
+
+    function resetPersonBanked(person, label) {
+      if (confirm(`Reset ${label}'s banked weeks total to 0? This cannot be undone.`)) {
+        data[person].banked = 0;
+        saveData();
+        renderAll();
+      }
     }
 
     function resetAll() {
-      if (confirm('Reset all tracking data? This cannot be undone.')) {
+      if (confirm('Reset all tracking data including banked weeks? This cannot be undone.')) {
         data = getDefaultData();
         saveData();
         renderAll();
