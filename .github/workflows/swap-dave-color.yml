@@ -2,8 +2,8 @@ name: Swap Dave's Saber Color
 
 on:
   schedule:
-    # Every Wednesday at 14:00 UTC (9am ET)
-    - cron: '0 14 * * 3'
+    # Every Monday at 14:00 UTC (9am ET)
+    - cron: '0 14 * * 1'
   workflow_dispatch:
 
 permissions:
